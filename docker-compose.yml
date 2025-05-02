@@ -13,12 +13,13 @@ services:
     ports:
      - '8080:8080'
      - '7077:7077'
+     
   spark-worker:
     build:
       context: .
       dockerfile: Dockerfile.spark
     environment:
-      - SPARK_MODE=wroker
+      - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
       - SPARK_WORKER_MEMORY=1g
       - SPARK_WORKER_CORES=2
